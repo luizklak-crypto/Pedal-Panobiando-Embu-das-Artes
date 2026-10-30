@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pedal Turbo 3D – Realistic Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrap">
+    <canvas id="gameCanvas"></canvas>
+
+    <header class="hud top-left">
+      <div class="brand">PANOBIANCO <span>EMBU DAS ARTES</span></div>
+      <div class="subtitle">PEDAL TURBO 3D • REALISTIC EDITION</div>
+    </header>
+
+    <section class="hud top-right stats">
+      <div class="stat-card"><span>Pontos</span><strong id="score">0</strong></div>
+      <div class="stat-card"><span>Moedas</span><strong id="coins">0</strong></div>
+      <div class="stat-card"><span>Combo</span><strong id="combo">x1</strong></div>
+      <div class="stat-card"><span>Recorde</span><strong id="best">0</strong></div>
+    </section>
+
+    <section class="hud bottom-left meters">
+      <div class="meter-wrap">
+        <label>Energia</label>
+        <div class="meter"><div id="energyFill" class="fill energy"></div></div>
+      </div>
+      <div class="meter-wrap">
+        <label>Turbo</label>
+        <div class="meter"><div id="turboFill" class="fill turbo"></div></div>
+      </div>
+      <div class="meter-wrap lives-wrap">
+        <label>Vidas</label>
+        <div id="lives" class="lives">❤ ❤ ❤</div>
+      </div>
+    </section>
+
+    <div id="centerMessage" class="center-message hidden"></div>
+
+    <section id="startScreen" class="overlay visible">
+      <div class="panel start-panel">
+        <div class="eyebrow">ACADEMIA PANOBIANCO • EMBU DAS ARTES</div>
+        <h1>Pedal Turbo 3D</h1>
+        <h2>Realistic Edition</h2>
+        <p>
+          Desvie dos obstáculos do dia a dia, colete moedas e energia, pule barreiras e ative o turbo.
+          Visual mais humano, jogabilidade mais fluida e controles feitos para celular.
+        </p>
+        <div class="tips">
+          <div>◀ ▶ Mude de faixa</div>
+          <div>⬆ Pule barreiras</div>
+          <div>⚡ Use turbo quando a barra encher</div>
+        </div>
+        <button id="startBtn" class="primary-btn">JOGAR AGORA</button>
+      </div>
+    </section>
+
+    <section id="gameOverScreen" class="overlay hidden">
+      <div class="panel end-panel">
+        <div class="eyebrow">MISSÃO ENCERRADA</div>
+        <h2>Resultado da Corrida</h2>
+        <div class="result-grid">
+          <div><span>Pontos</span><strong id="finalScore">0</strong></div>
+          <div><span>Moedas</span><strong id="finalCoins">0</strong></div>
+          <div><span>Combo Máx.</span><strong id="finalCombo">x1</strong></div>
+          <div><span>Recorde</span><strong id="finalBest">0</strong></div>
+        </div>
+        <p id="resultMessage">Boa! Agora bora tentar bater seu próprio recorde.</p>
+        <button id="restartBtn" class="primary-btn">JOGAR DE NOVO</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button class="control-btn arrow" id="leftBtn">◀</button>
+      <button class="control-btn jump" id="jumpBtn">PULAR</button>
+      <button class="control-btn arrow" id="rightBtn">▶</button>
+      <button class="control-btn turbo" id="turboBtn">⚡ TURBO</button>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r155/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
