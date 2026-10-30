@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Pedal Turbo 3D – Premium Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-wrap">
+    <canvas id="gameCanvas"></canvas>
+    <div class="cinematic-vignette" aria-hidden="true"></div>
+    <div id="speedLines" class="speed-lines" aria-hidden="true"></div>
+    <div id="impactFlash" class="impact-flash" aria-hidden="true"></div>
+
+    <header class="hud top-left">
+      <div class="brand">PANOBIANCO <span>EMBU DAS ARTES</span></div>
+      <div class="subtitle">PEDAL TURBO 3D • PREMIUM EDITION</div>
+    </header>
+
+    <section class="hud top-right stats">
+      <div class="stat-card"><span>Pontos</span><strong id="score">0</strong></div>
+      <div class="stat-card"><span>Moedas</span><strong id="coins">0</strong></div>
+      <div class="stat-card"><span>Combo</span><strong id="combo">x1</strong></div>
+      <div class="stat-card"><span>Recorde</span><strong id="best">0</strong></div>
+    </section>
+
+    <section class="hud bottom-left meters">
+      <div class="meter-wrap">
+        <label>Energia</label>
+        <div class="meter"><div id="energyFill" class="fill energy"></div></div>
+      </div>
+      <div class="meter-wrap">
+        <label>Turbo</label>
+        <div class="meter"><div id="turboFill" class="fill turbo"></div></div>
+      </div>
+      <div class="meter-wrap lives-wrap">
+        <label>Vidas</label>
+        <div id="lives" class="lives">❤ ❤ ❤</div>
+      </div>
+    </section>
+
+    <div id="centerMessage" class="center-message hidden"></div>
+
+    <section id="startScreen" class="overlay visible">
+      <div class="panel start-panel">
+        <div class="eyebrow">ACADEMIA PANOBIANCO • EMBU DAS ARTES</div>
+        <div class="premium-tag">NOVA TEMPORADA • EDIÇÃO PREMIUM</div>
+        <div class="title-glow"><h1>PEDAL<br><em>TURBO</em> <small>3D</small></h1></div>
+        <h2>REALISTIC PREMIUM EDITION</h2>
+        <p>
+          Desvie dos obstáculos do dia a dia, colete moedas e energia, pule barreiras e ative o turbo.
+          Visual mais humano, jogabilidade mais fluida e controles feitos para celular.
+        </p>
+        <div class="tips">
+          <div>◀ ▶ Mude de faixa</div>
+          <div>⬆ Pule barreiras</div>
+          <div>⚡ Use turbo quando a barra encher</div>
+        </div>
+        <div class="start-actions"><button id="startBtn" class="primary-btn">▶ INICIAR CORRIDA</button><button id="soundBtn" class="secondary-btn" aria-pressed="false">🔊 SOM LIGADO</button></div>
+        <div class="start-footer">3 vidas • obstáculos • moedas • salto • turbo</div>
+      </div>
+    </section>
+
+    <section id="gameOverScreen" class="overlay hidden">
+      <div class="panel end-panel">
+        <div class="eyebrow">CHEGADA • EMBU DAS ARTES</div>
+        <div id="grade" class="grade">🏁 CORRIDA FINALIZADA</div>
+        <h2>SEU RESULTADO</h2>
+        <div class="result-grid">
+          <div><span>Pontos</span><strong id="finalScore">0</strong></div>
+          <div><span>Moedas</span><strong id="finalCoins">0</strong></div>
+          <div><span>Combo Máx.</span><strong id="finalCombo">x1</strong></div>
+          <div><span>Recorde</span><strong id="finalBest">0</strong></div>
+        </div>
+        <p id="resultMessage">Boa! Agora bora tentar bater seu próprio recorde.</p>
+        <div class="start-actions"><button id="restartBtn" class="primary-btn">↻ CORRER NOVAMENTE</button><button id="shareBtn" class="secondary-btn">COMPARTILHAR RESULTADO</button></div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button class="control-btn arrow" id="leftBtn">◀</button>
+      <button class="control-btn jump" id="jumpBtn">PULAR</button>
+      <button class="control-btn arrow" id="rightBtn">▶</button>
+      <button class="control-btn turbo" id="turboBtn">⚡ TURBO</button>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
